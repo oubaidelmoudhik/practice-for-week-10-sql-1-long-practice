@@ -14,3 +14,26 @@ first joins the program, they automatically get loaded with 5 points. They can
 use 10 points to redeem a free coffee. You want to record the name of the
 customer and an optional two forms of contact with the customer. You also want
 to keep track of when each coffee was purchased or redeemed.
+
+```
+[Customers]
+\*customer_id (PK)
+name
+email
+phone
+points
+join_date
+
+[Transactions]
+\*transaction_id (PK)
+customer_id (FK)
+transaction_type
+points_earned
+points_redeemed
+date_time
+
+[CoffeeTypes]
+\*coffee_id (PK)
+coffee_name
+price
+```

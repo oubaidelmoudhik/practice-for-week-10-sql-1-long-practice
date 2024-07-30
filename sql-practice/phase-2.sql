@@ -1,1 +1,16 @@
--- Your code here
+DROP TABLE customers;
+DROP TABLE coffee_orders;
+CREATE TABLE customers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(40) NOT NULL,
+    phone INTEGER UNIQUE CHECK (phone BETWEEN 1000000000 AND 9999999999),
+    email VARCHAR(255),
+    points INTEGER DEFAULT 5,
+    created_at DATE NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE coffee_orders (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    is_redeemed BOOL DEFAULT 'not redeemed',
+    ordered_at DATE NOT NULL DEFAULT CURRENT_TIMESTAMP
+)
